@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazy Running Image and Name</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffcc00, #ff6600);
+            background-size: 400% 400%;
+            animation: bgAnimation 6s infinite alternate ease-in-out;
+            overflow: hidden;
+            margin: 0;
+            height: 100vh;
+        }
+
+        @keyframes bgAnimation {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            display: flex;
+            align-items: center;
+            transform: translateY(-50%);
+            animation: bounce 1s infinite alternate ease-in-out;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(-50%) scale(1); }
+            100% { transform: translateY(-60%) scale(1.1); }
+        }
+
+        img {
+            width: 120px;
+            height: auto;
+            margin-right: 15px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.7);
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            color: #fff;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            animation: glow 1.5s infinite alternate ease-in-out;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc; }
+            100% { text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="runner">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZLe8A_4ELZeGHZOvizeGEb6pMGin3OYPE_w&s" alt="Running Image">
+    <div class="name">🔥 Saksham Gupta (23BCE10006) 🚀</div>
+</div>
+
+<script>
+    let position = 0;
+    const runner = document.getElementById("runner");
+    const screenWidth = window.innerWidth;
+
+    function move() {
+        if (position > screenWidth) {
+            position = -200;
+        }
+        position += 8;
+        runner.style.left = position + "px";
+        requestAnimationFrame(move);
+    }
+
+    move();
+</script>
+
+</body>
+</html>
