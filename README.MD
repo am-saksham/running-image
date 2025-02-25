@@ -3,7 +3,7 @@
 A fun HTML, CSS, and JavaScript animation where an image and name move across the screen with cool neon effects, spinning animations, and a bouncing effect.  
 
 ## 🎥 Demo Video  
-[!(https://github.com/user-attachments/assets/edcf1505-3022-43ea-8cee-88c4de98739a)  ]
+(https://github.com/user-attachments/assets/edcf1505-3022-43ea-8cee-88c4de98739a)
 👉 *Click the thumbnail to watch the demo!*  
 
 ## 🔥 Features  
